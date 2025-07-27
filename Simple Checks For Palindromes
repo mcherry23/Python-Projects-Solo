@@ -1,0 +1,21 @@
+import re
+
+def is_palindrome(text) :
+    # 1. Clean the string: convert to lowercase and remove non-alphanumeric characters
+    cleaned_text = re.sub(r'[^a-zA-Z0-9]', '', text).lower()
+
+    # 2. Check if the cleaned string is equal to its reverse
+    return cleaned_text == cleaned_text[::-1]
+
+# --- Test Cases ---
+if __name__ == "__main__":
+    print(f"'racecar' is a palindrome: {is_palindrome('racecar')}")
+    print(f"'Racecar' is a palindrome: {is_palindrome('Racecar')}")
+    print(f"'A man, a plan, a canal: Panama' is a palindrome: {is_palindrome('A man, a plan, a canal: Panama')}")
+    print(f"'hello' is a palindrome: {is_palindrome('hello')}")
+    print(f"'Madam' is a palindrome: {is_palindrome('Madam')}")
+    print(f"'No lemon, no melon' is a palindrome: {is_palindrome('No lemon, no melon')}")
+    print(f"'12321' is a palindrome: {is_palindrome('12321')}")
+    print(f"'Was it a car or a cat I saw?' is a palindrome: {is_palindrome('Was it a car or a cat I saw?')}")
+    print(f"'' (empty string) is a palindrome: {is_palindrome('')}")
+    print(f"'A' is a palindrome: {is_palindrome('A')}")
